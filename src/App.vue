@@ -1,13 +1,19 @@
 <template>
   <div id="app" class="container">
     <h1>Todo</h1>
+    <Todo title="My List"/>
   </div>
 </template>
 
 <script>
+import Todo from '@/components/Todo'
 
 export default {
-  name: 'App'
+  name: 'App',
+
+  components: {
+    Todo
+  }
 }
 </script>
 
