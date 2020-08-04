@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app" class="container max-w-md">
     <h1>Todo</h1>
     <Todo title="My List"/>
   </div>
