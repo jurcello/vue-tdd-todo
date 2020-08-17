@@ -57,7 +57,6 @@ describe('The Todo.vue component', () => {
       expect(elementText('todo-1')).toMatch('Second')
     })
     it('items can be marked as done by clicking an element before the item.', async () => {
-
       function itemIsDone (itemId) {
         return wrapper.find(`[data-testid="todo-${itemId}"]`).attributes('data-done') === 'true'
       }
