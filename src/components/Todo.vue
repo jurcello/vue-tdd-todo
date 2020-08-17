@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Todo',
 
@@ -43,23 +45,23 @@ export default {
     }
   },
 
+  computed: {
+    ...mapGetters(['todos'])
+  },
+
   data () {
     return {
-      todos: [],
       newTodo: ''
     }
   },
 
   methods: {
     addTodo () {
-      this.todos.push({
-        description: this.newTodo,
-        done: false
-      })
+      this.$store.commit('ADD_TODO', this.newTodo)
       this.newTodo = ''
     },
     toggle (todo) {
-      todo.done = !todo.done
+      this.$store.commit('TOGGLE_TODO', todo)
     }
   }
 
