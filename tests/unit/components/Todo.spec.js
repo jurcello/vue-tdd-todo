@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import Todo from '@/components/Todo'
 import { createStore } from '@/store'
@@ -12,7 +12,7 @@ describe('The Todo.vue component', () => {
     store = createStore()
   })
   it('Displays the title when passed as a prop', () => {
-    const wrapper = shallowMount(Todo, {
+    const wrapper = mount(Todo, {
       localVue,
       store,
       propsData: {
@@ -20,7 +20,7 @@ describe('The Todo.vue component', () => {
       }
     })
     expect(wrapper.text()).toMatch('A random title')
-    const wrapper2 = shallowMount(Todo, {
+    const wrapper2 = mount(Todo, {
       localVue,
       store,
       propsData: {
@@ -33,7 +33,7 @@ describe('The Todo.vue component', () => {
     let wrapper
 
     beforeEach(() => {
-      wrapper = shallowMount(Todo, {
+      wrapper = mount(Todo, {
         localVue,
         store,
         propsData: {
